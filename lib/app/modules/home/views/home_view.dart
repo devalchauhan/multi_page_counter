@@ -18,6 +18,27 @@ class HomeView extends GetView<HomeController> {
           style: TextStyle(fontSize: 20),
         ),
       ),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Text(''),
+              label: 'Counter 1',
+            ),
+            BottomNavigationBarItem(
+              icon: Text(''),
+              label: 'Counter 2',
+            ),
+            BottomNavigationBarItem(
+              icon: Text(''),
+              label: 'Counter 3',
+            ),
+          ],
+          currentIndex: controller.selectedPage.value,
+          selectedItemColor: Colors.amber[800],
+          onTap: controller.onItemTapped,
+        ),
+      ),
     );
   }
 }

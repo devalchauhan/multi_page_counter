@@ -4,6 +4,8 @@ class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final count = 0.obs;
+  final selectedPage = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -16,5 +18,10 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
+
   void increment() => count.value++;
+
+  void onItemTapped(int index) {
+    selectedPage.value = index;
+  }
 }
