@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "11954332407",
+    "firebase_url": "https://counter-app-58d59-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "counter-app-58d59",
     "storage_bucket": "counter-app-58d59.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "11954332407-r0h7qtemb51avttrrt4m9p17f7j67v0m.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "11954332407-9eeluo6o8ukonb1juirn00qapr4dftac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aveosoftware.counterApp"
+              }
             }
           ]
         }
