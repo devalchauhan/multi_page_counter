@@ -1,3 +1,4 @@
+import 'package:counter_app/app/modules/home/views/counter_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,12 +13,7 @@ class HomeView extends GetView<HomeController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: CounterView(),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
