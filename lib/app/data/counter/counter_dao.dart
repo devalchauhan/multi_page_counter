@@ -5,6 +5,6 @@ class CounterDao {
   final DatabaseReference counterRef = FirebaseDatabase.instance.ref('counter');
 
   void saveCount(Counter counter, String page) {
-    counterRef.child(page).push().set(counter.toJson());
+    counterRef.child(page).set(counter.toJson());
   }
 }

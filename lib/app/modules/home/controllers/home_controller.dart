@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:counter_app/app/data/counter/counter_dao.dart';
 import 'package:counter_app/app/data/counter/model/counter.dart';
@@ -21,9 +22,28 @@ class HomeController extends GetxController {
     _counterSubscription = counterDao.counterRef.onValue.listen(
       (DatabaseEvent event) {
         print(event.snapshot.value);
-        // counterOne.value = (event.snapshot.value ?? 0) as int;
+        setCounterData(event.snapshot.value);
       },
     );
+  }
+
+  void setCounterData(Object? data) {
+    var counters = data as List;
+    for(var i=0;i<counters.length;i++){
+      var counter = Map<String, dynamic>.from(counters[i]);
+      var count = Counter.fromJson(counter).count;
+      switch (i) {
+        case 0:
+          counterOne.value = count;
+          break;
+        case 1:
+          counterTwo.value = count;
+          break;
+        case 2:
+          counterThree.value = count;
+          break;
+      }
+    }
   }
 
   @override
