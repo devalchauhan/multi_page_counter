@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:counter_app/app/data/counter/counter_dao.dart';
+import 'package:counter_app/app/data/counter/model/counter.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +34,7 @@ class HomeController extends GetxController {
   @override
   void onClose() {}
 
-  // void increment() => count.value++;
+  void increment() => counterDao.saveCount(Counter(getCounter() + 1), selectedPage.string);
 
   void onItemTapped(int index) {
     selectedPage.value = index;

@@ -14,6 +14,11 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: CounterView(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: controller.increment,
+        backgroundColor: Colors.green,
+        child: const Icon(Icons.add),
+      ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
