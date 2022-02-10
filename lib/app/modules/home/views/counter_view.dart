@@ -9,6 +9,7 @@ class CounterView extends GetView<HomeController> {
     return Scaffold(
       body: Obx(
         () => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Text(
@@ -16,6 +17,7 @@ class CounterView extends GetView<HomeController> {
                 style: TextStyle(fontSize: 20),
               ),
             ),
+            SizedBox(height: 30.0,),
             Center(
               child: Text(
                 '${controller.getCounter()}',

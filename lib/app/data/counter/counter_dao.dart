@@ -7,4 +7,9 @@ class CounterDao {
   void saveCount(Counter counter, String page) {
     counterRef.child(page).set(counter.toJson());
   }
+  void resetCounters() {
+    counterRef.child("1").set(Counter(0).toJson());
+    counterRef.child("2").set(Counter(0).toJson());
+    counterRef.child("3").set(Counter(0).toJson());
+  }
 }

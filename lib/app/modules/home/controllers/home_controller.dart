@@ -28,31 +28,32 @@ class HomeController extends GetxController {
   }
 
   void setCounterData(Object? data) {
-    var counters = data as List;
-    for(var i=0;i<counters.length;i++){
-      var counter = Map<String, dynamic>.from(counters[i]);
-      var count = Counter.fromJson(counter).count;
-      switch (i) {
-        case 0:
-          counterOne.value = count;
-          break;
-        case 1:
-          counterTwo.value = count;
-          break;
-        case 2:
-          counterThree.value = count;
-          break;
+    if (data != null) {
+      var counters = data as List;
+      for (var i = 0; i < counters.length; i++) {
+        var counter = Map<String, dynamic>.from(counters[i]);
+        var count = Counter.fromJson(counter).count;
+        switch (i) {
+          case 0:
+            counterOne.value = count;
+            break;
+          case 1:
+            counterTwo.value = count;
+            break;
+          case 2:
+            counterThree.value = count;
+            break;
+        }
       }
+    } else {
+      counterDao.resetCounters();
     }
   }
 
   @override
-  void onReady() {
-    super.onReady();
+  void onClose() {
+    _counterSubscription.cancel();
   }
-
-  @override
-  void onClose() {}
 
   void increment() => counterDao.saveCount(Counter(getCounter() + 1), selectedPage.string);
 
@@ -71,5 +72,9 @@ class HomeController extends GetxController {
       default:
         return 0;
     }
+  }
+
+  void resetData() {
+    counterDao.resetCounters();
   }
 }

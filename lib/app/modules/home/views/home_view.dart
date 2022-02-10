@@ -10,8 +10,14 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HomeView'),
+        title: Text('Multi page counter'),
         centerTitle: true,
+        actions: [
+          InkWell(
+            onTap: controller.resetData,
+            child: Icon(Icons.refresh),
+          ),
+        ],
       ),
       body: CounterView(),
       floatingActionButton: FloatingActionButton(
