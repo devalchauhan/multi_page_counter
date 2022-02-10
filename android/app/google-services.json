@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "11954332407",
+    "project_id": "counter-app-58d59",
+    "storage_bucket": "counter-app-58d59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11954332407:android:8ee4262fd1b46ea59fa9f2",
+        "android_client_info": {
+          "package_name": "com.aveosoftware.counter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11954332407-r0h7qtemb51avttrrt4m9p17f7j67v0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGzpLyXtjWlwi4tIuQRAtbAd7uVnUtu2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11954332407-r0h7qtemb51avttrrt4m9p17f7j67v0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
