@@ -11,12 +11,17 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Multi page counter'),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
           InkWell(
             onTap: controller.resetData,
-            child: Icon(Icons.refresh),
-          ),
+            child: Row(
+              children: [
+                Icon(Icons.refresh),
+                Text('Reset')
+              ],
+            ),
+          ).marginOnly(right: 20),
         ],
       ),
       body: CounterView(),
