@@ -8,8 +8,8 @@ class CounterDao {
     counterRef.child(page).set(counter.toJson());
   }
   void resetCounters() {
+    counterRef.child("0").set(Counter(0).toJson());
     counterRef.child("1").set(Counter(0).toJson());
     counterRef.child("2").set(Counter(0).toJson());
-    counterRef.child("3").set(Counter(0).toJson());
   }
 }
